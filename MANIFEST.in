@@ -1,0 +1,3 @@
+graft demo_completa/templates
+graft demo_completa/static
+include demo_completa/schema.sql
