@@ -4,7 +4,7 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
 
 app = Flask(__name__) # Crea l'istanza dell'applicazione
-app.config.from_object(__name__) # Carica la config da questo file (flaskr.py)
+app.config.from_object(__name__) # Carica la config da questo file (demo_completa.py)
 
 # Carichiamo una config di default
 app.config.update(dict(
@@ -33,7 +33,7 @@ def init_db():
 
 # Il decoratore app.cli.command fa in modo che Flask crei automaticamente il contesto dell'applicazione 
 # quando il comando viene eseguito. Quando lo script termina, verrà effettuato il teardown del context
-# e i
+# e verrà rilasciata la connessione con il database
 @app.cli.command('initdb')
 def initdb_command():
     """Inizializza il database"""
